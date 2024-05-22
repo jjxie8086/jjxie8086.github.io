@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceTime Makerspace</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header></header>
+<section id="events">
+    <h2>Upcoming Events</h2>
+    <a href="./Printfundamentals.html" class="event_1" style="text-decoration:none;">
+    <div class="event">
+      <h4>Basic 3D Printing Fundamentals</h4>
+      <p>Date: May 3, 2024</p>
+      <p>Time: 3:00 PM - 4:00 PM EST</p>
+    </div>
+    </a>
+    <a href="./Woodworking Class.html" class="event_1" style="text-decoration: none;">
+      <div class="event">
+        <h4>Woodworking Masterclass</h4>
+        <p>Date: May 5, 2024</p>
+        <p>Time: 1:00 PM - 5:00 PM EST</p>
+      </div>
+    </a>
+    <a href="./Robotics Workshop.html" class="event_1" style="text-decoration: none;">
+      <div class="event">
+        <h4>Robotics Workshop</h4>
+        <p>Date: May 15, 2024</p>
+        <p>Time: 10:00 AM - 2:00 PM EST</p>
+      </div>
+    </a>
+    <a href="./Python Bootcamp.html" class="event_1" style="text-decoration:none;">
+    <div class="event">
+      <h4>Python Bootcamp</h4>
+      <p>Date: May 29, 2024</p>
+      <p>Time: 5:00 PM - 6:00 PM EST</p>
+    </div>
+    </a>
+    <h2>Book An Event</h2>
+    <p>Want to host an event? Fill out the form below to book a time for your event:</p>
+    <form>
+      <label for="name1">Event Name:</label>
+      <input type="text" id="name1" name="name1" required>
+      <label for="name2">Your Name:</label>
+      <input type="text" id="name2" name="name2" required>
+      <label for="message">Event Description:</label>
+      <textarea id="message" name="message" required></textarea>
+      <label for="startdate">Event Date:</label>
+      <input type="date" id="date" name="date" required>
+      <br>
+      <br>
+      <button type="submit">Click here to send us an email to book your event!</button>
+    </form>
+  </section>
+
+<script>
+	function mail(subject, message){
+var win = window.open("mailto:stmakerspace@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message));	
+if(!win){
+alert("Sorry, but it seems pop-ups aren't allowed! Please allow pop-ups for the email to be generated.");
+}
+	}
+	function parseDate(date){
+	return date.replace(/-/g, "/").slice(5, date.length) + "/" + date.slice(0, 4);
+	}
+	function enter(){
+        return decodeURIComponent("%0A");
+	}
+	document.querySelector("form").addEventListener("submit", function(event){
+		event.preventDefault();
+		alert("Thanks for your interest! We will look at your date and message you back with an available time slot.");
+		mail("Event - " + document.querySelector("#name1").value.trim(), "Hello, " + enter() + enter() + "My name is " + document.querySelector("#name2").value.trim() + ", and I would like to host this event at " + parseDate(document.querySelector("#date").value) + ". Here is an additional description of this event: " + enter() + enter() + document.querySelector("#message").value + enter() + enter() + "Thank you so much and have a great day!" + enter() + enter() + "Thanks and regards, " + enter() + document.querySelector("#name2").value.trim());
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceTime Makerspace</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header></header>
+ 
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or would like to inquire about membership, feel free to contact us using the form below:</p>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <br>
+      <br>
+      <button type="submit">Send!</button>
+    </form>
+  </section>
+  <script>
+document.querySelector("form").addEventListener("submit", function(event){
+	event.preventDefault();
+	var win = window.open("mailto:stmakerspace@gmail.com?subject=" + encodeURIComponent(document.querySelector("#subject").value) + "&body=" + encodeURIComponent("Hi, this is " + document.querySelector("#name").value.trim() + ".") + "%0A%0A" + encodeURIComponent(document.querySelector("#message").value) + "%0A%0A" + encodeURIComponent("Thanks and regards, ") + "%0A" + encodeURIComponent(document.querySelector("#name").value));
+	if(!win){
+alert("Sorry, but it seems pop-ups aren't allowed! Please allow pop-ups for the email to be generated.");
+}
+});
+  </script>
+  <footer>
+    <p>&copy; 2024 Community Makerspace. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,229 @@
+@font-face {
+  /* Font family name */
+  font-family: 'latolight';
+
+  /* Path to the WOFF file */
+  src: url('fonts/Lato-Light.woff') format('woff');
+
+  /* Optional: Font weight and style */
+  font-weight: normal;
+  font-style: normal;
+}
+*:not(footer):not(.imageContainer){
+  position:relative;
+animation:animatetop 0.4s
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+body {
+  font-family: latolight;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #161421;
+  color: #F6D55C;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  color: #161421;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 50px;
+}
+
+h2 {
+  color: black;
+}
+.citation-container {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.citation-container i {
+  font-style: italic;
+}
+
+.citation-container a {
+  color: #0074d9;
+  text-decoration: none;
+}
+
+.citation-container a:hover {
+  text-decoration: underline;
+}
+.download {
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.view {
+    background-color: #378805;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.imageContainer{
+  float: right;
+  padding: 0 12.5%;
+  display: none;
+}
+.event, .workshop, article{
+  color: black;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+/* Add a class for the elements you want to slide in */
+
+
+.testimonial{
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: black;	
+  border-radius: 50px;
+}
+event_1{
+  color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+#calendar {
+  font-family: Arial, sans-serif;
+  color: #444;
+}
+
+#calendar table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#calendar th, #calendar td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+#calendar ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0.8em;
+}
+
+#calendar h2 {
+  text-align: center;
+  color: #333;
+}
+#classes {
+  font-family: 'latolight';
+  color: #444;
+}
+
+#classes .class {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#classes .class h4 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#classes .class p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+
+@media screen and (max-width: 600px) {
+  #classes .class {
+    font-size: 0.8em;
+  }
+  #calendar th, #calendar td {
+    font-size: 0.8em;
+  }
+}
